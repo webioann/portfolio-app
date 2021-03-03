@@ -1,4 +1,4 @@
-import '../STYLES/Page.scss'
+import '../STYLES/Total.scss'
 
 function WorkThree() {
   return (
