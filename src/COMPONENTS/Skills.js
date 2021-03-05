@@ -1,4 +1,4 @@
-import '../STYLES/Total.scss';
+import '../STYLES/Page.scss';
 
 function Skills() {
   return (

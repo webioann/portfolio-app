@@ -1,0 +1,33 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: aqua;
+    margin-top: 10px;
+}
+
+
+@media  screen and (max-width: 1200px ){	
+    .container{ 
+        max-width: 990px;
+        background-color: red;
+    }
+}
+    
+    
+@media  screen and (max-width: 1024px ){	
+    .container{ 
+        max-width: 768px;
+        background-color: blue;
+    }
+}
+
+
+@media  screen and (max-width: 772px ){	
+    .container{
+        max-width: none;
+        background-color: yellow;
+    }
+}	
+ 
+
