@@ -50,6 +50,7 @@
             font-weight: 500;
             text-align: center;
             text-shadow: 0 3px rgba(50,50,70,0.5);
+            margin-bottom: 10px;
         }
         .location-wraper .date{
             font-size: 20px;
@@ -61,13 +62,17 @@
         }
         .weather-wraper{
             height: 200px;
-            width: 70%;
+            width: 80%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             text-align: center;
             padding: 30px 0;
+            // background-image: url('http://openweathermap.org/img/wn/10d@2x.png');
+            // background-size: cover;
+            // background-position: bottom;
+        
             .temper{
                 position: relative;
                 display: inline-block;
@@ -87,6 +92,25 @@
                 font-weight: 700;
                 text-shadow: 0 3px rgba(50,50,70,0.5);
             }
+            .details{
+                position: relative;
+                display: inline-block;
+                padding: 10px;
+                margin-top: 10px;
+                background-color: rgba(255,255,255,0.2);
+                border-radius: 10px;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 900;
+                text-shadow: 0 3px rgba(50,50,70,0.5);
+                box-shadow: 0 6px  rgba(0,0,0,0.2);
+                p{
+                    text-align: left;
+                    margin-top: 10px;
+                }
+            }
+
         }
+        
     }
 }    

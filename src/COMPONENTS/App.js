@@ -3,7 +3,7 @@ import About from './About'
 import Home from './Home'
 import Skills from './Skills'
 import Randomuser from '../RANDOMUSER/Randomuser'
-import WeatherApp from './WeatherApp'
+import WeatherApp from '../WEATHER/WeatherApp'
 import WorkThree from './WorkThree'
 import '../STYLES/Page.scss'
 
