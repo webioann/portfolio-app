@@ -29,9 +29,8 @@ function Birthday(props) {
         years = `in ${year} year`;
     }
     time();
-
     return (
-        <div className="birthday-wraper">
+        <div className="double-row-box">
             <span>{birthday}</span>
             <span>{years}</span>
         </div>

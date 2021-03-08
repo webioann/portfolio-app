@@ -9,14 +9,17 @@ h1{
 ul{
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  padding: 5px;
+  border-radius: 7px 7px 0 0;
+  background-color: rgba(0,0,0,0.2);
   li{
     list-style: none;
+    color: #000;
   }
   li a{
-    color: blue;
     text-transform: uppercase;
     text-decoration: none;
+    
   }
 }
 

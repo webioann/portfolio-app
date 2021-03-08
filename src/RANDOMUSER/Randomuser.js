@@ -77,17 +77,17 @@ function Randomuser() {
                 <div className='randomuser-wraper'>
                     <table>
                         <tr className='sort-panel'> 
-                            <div className='block-1'>Users on page : 
+                            <div className='block-1'> 
                                 <button onClick={bigPage}>12 on page</button>
                                 <button onClick={mediumPage}>8  on page</button>
                                 <button onClick={smallPage}>4  on page</button>
                             </div>
-                            <div className='block-2'>Sort users of sex : 
+                            <div className='block-2'>
                                 <button onClick={allSex}>all sex</button>
                                 <button onClick={female}>women</button>
                                 <button onClick={male}>men</button>
                             </div>
-                            <div className='block-3'>Sort by nation : 
+                            <div className='block-3'>   
                                 <button onClick={showList} className='btn-sort-nation'>
                                     <SortByNationality/>
                                 </button>
@@ -97,22 +97,24 @@ function Randomuser() {
                                 <th className='avatar-column'>User</th>
                                 <th className='fullname-column'>Full name</th>
                                 <th className='birthday-column'>Birthday</th>
-                                {/* <th className='gender-column'> Gender</th> */}
                                 <th className='contact-column'> Contacts</th>
                                 <th className='location-column'>Location</th>
                                 <th className='nation-column'>Nationality</th>
                         </tr>
                         <tr className='users-list'>
                             {user.map((user) => (<li className='user' key={user.login.uuid} >
-                                <td className='avatar-column'><img src={user.picture.medium} className='photo' alt=''/></td>
+                                <td className='avatar-column'>
+                                    <img src={user.picture.medium} className='photo' alt=''/>
+                                </td>
                                 <td className='fullname-column'>
                                     <div className='double-row-box'>
                                         <span>{user.name.first}</span>
                                         <span>{user.name.last}</span>
                                     </div>
                                 </td>
-                                <td className='birthday-column'><Birthday user={user}/></td>
-                                {/* <td className='gender-column'><span>{user.gender}</span></td> */}
+                                <td className='birthday-column'>
+                                    <Birthday user={user}/>
+                                </td>
                                 <td className='contact-column'>
                                     <div className='double-row-box'>
                                         <span>{user.phone}</span>
@@ -131,11 +133,11 @@ function Randomuser() {
         )
     }else if (contacts.isLoad) {
         return (
-            <p>...LOADING ...</p>
+            <h1>...LOADING ...</h1>
         )
     } else if (contacts.isError) {
         return (
-            <p>...ERROR ...</p>
+            <h1>...ERROR ...</h1>
         )
     }
 }    

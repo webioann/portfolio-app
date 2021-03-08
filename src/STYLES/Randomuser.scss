@@ -4,37 +4,22 @@
 
 .randomuser-wraper{
     background-color: rgba(0,0,0,0.2);
-    background-color: green;
-    border-radius: 7px;
+    border-radius: 0 0 7px 7px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
 table{
     text-align: left;
-    th {
-        width: 20%;
-        // font-size: 20px;
-        border-left: 1px solid #000;
-    }
-    td{
-        width: 20%;
-        border-left: 1px solid #000;
-    }
-    tr{
-        position: relative;
-    }
-    
 }
 .sort-panel{
     display: flex;
-    padding: 5px 0;
     flex-wrap: wrap;
-    // font-size: 20px;
+    padding: 5px 0;
     button{
-        margin-left: 5px;
+        margin-left: 8px;
         width: 80px;
-        border-radius: 5px;
+        border-radius: 3px;
         background-color: rgba(255,255,255,0.4);
         cursor: pointer;
         &:hover{
@@ -43,17 +28,44 @@ table{
     }
     .block-1{
         flex: 0 1 40%;
-        border-left: 1px solid #000;
     }
     .block-2{
         flex: 0 1 40%;
-        border-left: 1px solid #000;
     }    
     .block-3{
         flex: 0 1 20%;
-        border-left: 1px solid #000;
         button{
             transform: scale(1);
+            .sort-by-nationality-wraper{
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                cursor: pointer;
+                position: relative;
+                .glas-list{
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    padding: 10px 0;
+                    border: 2px solid  #ADB0B6;
+                    border-radius: 5px;
+                    background-color: white;
+                    z-index: 10;
+                    li{
+                        list-style: none;
+                        padding: 5px 20px;
+                    }
+                    li:hover{
+                        background-color: rgba(0,0,0,0.07);
+                    }
+                    li:first-child{
+                        color: red; 
+                        
+                    }
+                }
+            }    
+            
         }
     }
 }
@@ -63,12 +75,16 @@ table{
     justify-content: space-between;
     border: 1px solid #1D2225;
     border-radius: 3px;
-    padding: 5px 0;
-    // font-size: 20px;
+    padding: 5px;
 }
 
 .avatar-column{
-    width: 7%;
+    width: 10%;
+    .photo{
+        border-radius:50%;
+        margin-left: 5px;
+    
+    }
 }
 
 .fullname-column{
@@ -77,14 +93,6 @@ table{
 
 .birthday-column{
     width: 15%;
-}
-
-.gender-column{
-    width: 8%;
-    display: flex;
-    align-items: center;
-    span{
-    }
 }
 
 .contact-column{
@@ -98,14 +106,15 @@ table{
 .nation-column{
     text-align: right;
     width: 10%;
+    padding: 15px 5px;
 }
 
 .user-list{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    
 }
-
 .user{
     list-style: none;
     display: flex;
@@ -116,74 +125,16 @@ table{
     padding-bottom: 3px;
 }
 
-.photo{
-    width: 75px;
-    height: 75px;
-    border-radius:50%;
-}
 
 .double-row-box{
-    padding: 5px;
+    padding: 15px 5px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    // font-size: 20px;
-}
-
-.birthday-wraper{
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    // font-size: 20px;
-}
-
-.location-wraper{
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    // font-size: 20px;
+    justify-content: space-between;
     .other-text{
-      color: #1D2225
+        color: #1D2225
     }
 }
 
-.nationality-wraper{
-//   font-size: 20px;
-}
-
-.sort-by-nationality-wraper{
-    width:20%;
-    border: 2px solid  #ADB0B6;
-    border-radius: 5px;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    cursor: pointer;
-    position: relative;
-    .glas-list{
-        position: absolute;
-        top: 52px;
-        left:-32px;
-        padding: 10px 0;
-        border: 2px solid  #ADB0B6;
-        border-radius: 5px;
-        background-color: white;
-        // font-size: 20px;
-        z-index: 10;
-        transition: opacity 500ms linear;
-        li{
-            list-style: none;
-            padding: 5px 20px;
-        }
-        li:hover{
-            background-color: rgba(0,0,0,0.07);
-        }
-        li:last-child{
-            color: red; 
-        }
-    }
-}    
 

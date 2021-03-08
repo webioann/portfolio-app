@@ -6,10 +6,8 @@ import '../STYLES/Randomuser.scss'
 
 function SortByNationality() {
     const[display,setDisplay] = useState(false);
-    const[opas,setOpas] = useState(0);
 
     const dispatch = useDispatch();
-    const natio = useSelector(state => state.natio.natio)
 
     let nationalityList = [];
     let nationalityCode = [];
@@ -21,6 +19,7 @@ function SortByNationality() {
     function showList () {
         setTimeout(() => {
             setDisplay(!display);
+            
         }
            ,500
         );
@@ -28,16 +27,16 @@ function SortByNationality() {
     function choose (event) {
         dispatch(chooseNatioAction(event.target.type));
         setTimeout(() => {
-            setDisplay(!display);
-            setOpas(0);
+            setDisplay(false);
         }
            ,500
         );
     }
      if(display) {
         return (
-            <div className='sort-by-nationality-wraper' >
-                <div className='glas-list' style={{opacity:{opas}}}>
+            <div className='sort-by-nationality-wraper' onClick={showList}>
+                Nationality
+                <div className='glas-list' >
                     {nationalityCode.map((code,key) =>(<li 
                      onClick={choose} key={key} type={code} >
                           {nationalityList[key]} </li>))}
@@ -45,11 +44,11 @@ function SortByNationality() {
             </div>
         )
     }else{
-    return (
-        <div className='sort-focus' onClick={showList}>
-            Nationality
-        </div>
-    )
+        return (
+            <div className='sort-by-nationality-wraper' onClick={showList}>
+                Nationality
+            </div>
+        )
     }
 }
 export default SortByNationality;

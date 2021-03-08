@@ -1,4 +1,5 @@
 const national = {
+    ALL: "Anybody",
     AU: "Australian",
     BR: "Brazilian",
     CA: "Canadian",
@@ -16,7 +17,6 @@ const national = {
     NZ: "New Zealand",
     TR: "Turkish",
     US: "American",
-    ALL: "Anybody"
 }
 
 export default national;
