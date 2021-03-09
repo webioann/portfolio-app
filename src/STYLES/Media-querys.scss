@@ -1,13 +1,25 @@
+html,body {
+    font-size: 16px;
+  }
+  //========================//
 .container{
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
-    background-color: aqua;
     min-height: 100vh;
+    background-image: url('../assets/On-iPhone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
 }
 
 
 @media  screen and (max-width: 1200px ){	
+    html,body {
+        font-size: 16px;
+      }
+      
     .container{ 
         max-width: 990px;
         background-color: red;
@@ -15,7 +27,11 @@
 }
     
     
-@media  screen and (max-width: 1024px ){	
+@media  screen and (max-width: 1024px ){
+    html,body {
+        font-size: 11px;
+      }
+    
     .container{ 
         max-width: 768px;
         background-color: blue;
@@ -24,6 +40,10 @@
 
 
 @media  screen and (max-width: 772px ){	
+    html,body {
+        font-size: 8px;
+      }
+    
     .container{
         max-width: none;
         background-color: yellow;

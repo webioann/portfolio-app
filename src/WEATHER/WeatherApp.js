@@ -1,6 +1,7 @@
 
 import React,{useState,useEffect} from 'react'
 import Details from './Details';
+import DefaultPage from './DefaultPage';
 import '../STYLES/WeatherApp.scss';
 
 function WeatherApp() {
@@ -17,10 +18,12 @@ function WeatherApp() {
           urlBase: "http://api.openweathermap.org/data/2.5/",
           lang: "ua",
         }
+        // localStorage.clear();
+
         let respons = await fetch(`${api.urlBase}weather?q=${city}&lang=${api.lang}&units=metric&appid=${api.key}`)
         let dataWeather = await respons.json()
           setWeather(dataWeather);
-         
+      
       }
       catch (error) {
         setisError(true);
@@ -30,13 +33,17 @@ function WeatherApp() {
         setisLoad(false)
       }
     }else{
-        let dataW = localStorage.getItem('data')
-        setWeather(JSON.parse(dataW));
+       console.log('E L S E')
+       let dataW = localStorage.getItem('data')
+       setWeather(JSON.parse(dataW)); 
+       console.log(data)
+
     }
   }
   useEffect(() => {
-    // localStorage.clear();
+   
     localStorage.setItem('data',JSON.stringify(data));
+
   },[data])
 
   let createDate = '';
@@ -59,57 +66,43 @@ function WeatherApp() {
   }
 
     return (
-      <div className='weather-app'>
-        <main>
-          <div className="sourch-wraper">
-            <input 
-              className='sourch-bar'
-              type='text'
-              placeholder='Search...'
-              onChange={chooseCity}
-              value={city}
-              onKeyPress={restApi} />
-          </div>
-          {(typeof data.main != "undefined") ? (
-          <>
-            <div className='location-wraper'>
-              <div className="location">{data.name} ,{data.sys.country}  </div>
-              <div className="date">{createDate}</div>
+      <div >
+        <div className='weather-app'>
+          <main>
+            <div className="sourch-wraper">
+              <input 
+                className='sourch-bar'
+                type='text'
+                placeholder='Search...'
+                onChange={chooseCity}
+                value={city}
+                onKeyPress={restApi} />
             </div>
-            <div className='weather-wraper'>
-              <div className="temper">{Math.round(data.main.temp)}&deg;C</div>
-              <div className="weather">
-                <span> {data.weather[0].description} </span>
-                <img src={`https://openweathermap.org/img/wn/${ data.weather[0].icon}@2x.png` } alt=''/>
-              </div>
-              <Details data={data}/>
-            </div>
-            
-          </>
-          ) : (
+            {(typeof data.main != "undefined") ? (
             <>
               <div className='location-wraper'>
-                <div className="location">City ,UA  </div>
+                <div className="location">{data.name} ,{data.sys.country}  </div>
                 <div className="date">{createDate}</div>
               </div>
               <div className='weather-wraper'>
-                <div className="temper">0&deg;C</div>
-                <div className="weather">Sunny</div>
+                <div className="temper">{Math.round(data.main.temp)}&deg;C
+                  <div className="weather">
+                    <span> {data.weather[0].description} </span>
+                    <img src={`https://openweathermap.org/img/wn/${ data.weather[0].icon}@2x.png` } alt=''/>
+                  </div>
+                </div>
+                <Details data={data}/>
               </div>
             </>
-          )}
-        </main>
+            ) : (
+              <DefaultPage/>
+            )}
+          </main>
+        </div>
+
       </div>
   );
 
 }
 
 export default WeatherApp;
-  // if(weather.main.temp > 16) {
-  //   setClas('app warm')
-  // }else{
-  //   setClas('app')
-  // }
-  //  
-
-  // e => setCity(e.target.value)

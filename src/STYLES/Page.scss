@@ -9,17 +9,32 @@ h1{
 ul{
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  border-radius: 7px 7px 0 0;
-  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  // border-bottom: 2px solid #fff;
+  margin-bottom: 16px;
+  box-shadow: 0px 0px 3px 3px white;
+  // background-color: rgba(0,0,0,0.5);
   li{
     list-style: none;
-    color: #000;
+    max-width: 200px;
+    text-decoration: underline;
   }
   li a{
     text-transform: uppercase;
     text-decoration: none;
-    
+    color: #fff;
+    font-weight: 600;
+    // background-color: rgba(255,255,255,0.7);
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 400ms ease;
+    &:hover{
+      color: red;
+    }
+  }
+  li a:active{
+    color: blue;
   }
 }
 
