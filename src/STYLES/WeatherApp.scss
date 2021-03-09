@@ -4,7 +4,7 @@
     background-image: url('../assets/red.jpg');
 }
  
-.app {
+.weather-app {
     background-image: url('../assets/blue.jpg');
     max-width: 500px;
     height: 900px;
@@ -24,7 +24,7 @@
         background-image: linear-gradient(to bottom , rgba(0,0,0,0.2) , rgba(0,0,0,0.75));
         .sourch-wraper{
             width: 100%;
-            margin: 0 0 75px;
+            margin: 0 0 30px;
             .sourch-bar{
                 display: block;
                 width: 100%;
@@ -69,13 +69,10 @@
             justify-content: space-between;
             text-align: center;
             padding: 30px 0;
-            // background-image: url('http://openweathermap.org/img/wn/10d@2x.png');
-            // background-size: cover;
-            // background-position: bottom;
         
             .temper{
-                position: relative;
-                display: inline-block;
+                // position: relative;
+                // display: inline-block;
                 padding: 30px;
                 background-color: rgba(255,255,255,0.2);
                 border-radius: 16px;
@@ -88,9 +85,22 @@
             .weather{
                 margin-top: 20px;
                 color: #fff;
-                font-size: 48px;
-                font-weight: 700;
+                font-size: 40px;
+                font-weight: 500;
                 text-shadow: 0 3px rgba(50,50,70,0.5);
+                display: flex;
+                justify-content: center;
+                border-bottom: 2px solid rgba(50,50,70,0.5);
+                text-align: left;
+                span{
+                    padding-bottom: 10px ;
+                    text-align: center;
+                    font-style: italic;
+                }
+                img{
+                    width: 50px;
+                    align-self: center;
+                }
             }
             .details{
                 position: relative;

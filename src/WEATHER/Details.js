@@ -54,40 +54,30 @@ function Details(props) {
     const windDirect = () => {
         let dir = data.wind.deg;
         if( dir > 0 && dir <= 23){
-            direction = "north wind"
+            direction = "north"
         }else if( dir > 23 && dir <= 68){
-            direction = "north-east wind"
+            direction = "north-east"
         }else if( dir > 68 && dir <= 113){
-            direction = "east wind"
+            direction = "east"
         }else if( dir > 113 && dir <= 158){
-            direction = "south-east wind"
+            direction = "south-east"
         }else if( dir > 158 && dir <= 203){
-            direction = "south wind"
+            direction = "south"
         }else if( dir > 203 && dir <= 248){
-            direction = "south-west wind"
+            direction = "south-west"
         }else if( dir > 248 && dir <= 293){
-            direction = "west wind"
+            direction = "west"
         }else if( dir > 293 && dir <= 338){
-            direction = "north-west wind"
+            direction = "north-west"
         }else if( dir > 338 && dir <= 360){
-            direction = "north wind"
+            direction = "north"
         }
     }
    windDirect();
-        
-
-
-
-
-
-
-
-
 
     return (
         <div className='details'>
-            <p>Wind speed : {Math.round(data.wind.speed)} m/s</p>
-            <p>Wind direction : {direction}</p>
+            <p>Wind : {direction}  {Math.round(data.wind.speed)} m/s</p>
             <p>Sunrise : {sunRise}</p>
             <p>Sunset : {sunSet}</p>
             <p>Pressure : {pressuare}mm rt col</p>

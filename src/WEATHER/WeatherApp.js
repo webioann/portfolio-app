@@ -1,50 +1,43 @@
 
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Details from './Details';
 import '../STYLES/WeatherApp.scss';
 
 function WeatherApp() {
   const[data,setWeather] = useState({});
-  const[city,setCity] = useState('City');
+  const[city,setCity] = useState('');
   const[isLoad,setisLoad] = useState(true);
   const[isError,setisError] = useState(false);
-  
-  const api = {
-    key: "59f5158226fe5c049d50f354a9fa3f30",
-    urlBase: "http://api.openweathermap.org/data/2.5/",
-    lang: "ua",
-  }
-  let sunRise = '';
-  let sunSet = '';
 
-    async function restApi (evt)  {
-      if(evt.key === "Enter" ) {
-        try {
-          let respons = await fetch(`${api.urlBase}weather?q=${city}&lang=${api.lang}&units=metric&appid=${api.key}`)
-          let data = await respons.json()
-            setWeather(data);
-          console.log(data)
-
-          localStorage.clear();
-          localStorage.setItem('data',JSON.stringify(data));
-
+  async function restApi (evt)  {
+    if(evt.key === "Enter") {
+      try {
+        const api = {
+          key: "59f5158226fe5c049d50f354a9fa3f30",
+          urlBase: "http://api.openweathermap.org/data/2.5/",
+          lang: "ua",
         }
-        catch (error) {
-          setisError(true);
-          console.error('BIG ERROR !!!')
-        }
-        finally {
-          setisLoad(false)
-        }
+        let respons = await fetch(`${api.urlBase}weather?q=${city}&lang=${api.lang}&units=metric&appid=${api.key}`)
+        let dataWeather = await respons.json()
+          setWeather(dataWeather);
+         
+      }
+      catch (error) {
+        setisError(true);
+        console.error('BIG ERROR !!!')
+      }
+      finally {
+        setisLoad(false)
+      }
     }else{
-        let dataq = localStorage.getItem('data')
-        setWeather(JSON.parse(dataq));
-
+        let dataW = localStorage.getItem('data')
+        setWeather(JSON.parse(dataW));
     }
-  }  
-  
-
-
+  }
+  useEffect(() => {
+    // localStorage.clear();
+    localStorage.setItem('data',JSON.stringify(data));
+  },[data])
 
   let createDate = '';
     const dateBuilder = () => {
@@ -60,16 +53,20 @@ function WeatherApp() {
       createDate = `${day} ${date} ${mounth} ${year}`
     }
   dateBuilder();
+  
+  const chooseCity = (event) => {
+    setCity(event.target.value)
+  }
 
     return (
-      <div className='app'>
+      <div className='weather-app'>
         <main>
           <div className="sourch-wraper">
             <input 
               className='sourch-bar'
               type='text'
               placeholder='Search...'
-              onChange={e => setCity(e.target.value)}
+              onChange={chooseCity}
               value={city}
               onKeyPress={restApi} />
           </div>
@@ -81,7 +78,10 @@ function WeatherApp() {
             </div>
             <div className='weather-wraper'>
               <div className="temper">{Math.round(data.main.temp)}&deg;C</div>
-              <div className="weather">{data.weather[0].description}</div>
+              <div className="weather">
+                <span> {data.weather[0].description} </span>
+                <img src={`https://openweathermap.org/img/wn/${ data.weather[0].icon}@2x.png` } alt=''/>
+              </div>
               <Details data={data}/>
             </div>
             
@@ -105,41 +105,11 @@ function WeatherApp() {
 }
 
 export default WeatherApp;
-
-
-// localStorage.setItem('city',weather.name);
-// console.log(weather)
-// 
-
-
   // if(weather.main.temp > 16) {
   //   setClas('app warm')
   // }else{
   //   setClas('app')
   // }
+  //  
 
-  // || 
-
-  // let temper = Math.round(data.main.temp);
-  // let png = data.weather[0].icon;
-  // let srcc = `https://openweathermap.org/img/wn/${png}@2x.png`;
-  // let deg = data.wind.deg;
-  // wind.style = `transform: rotate(${deg}deg)`;
-  // let speedWint = Math.round(data.wind.speed);
-
-          // .then(res => res.json())
-          // .then(result => {
-
-
-
-
-  // let cityLoc = "Kiev";
-  // let png = weather.weather[0].icon;
-  // let srcc = `https://openweathermap.org/img/wn/${png}@2x.png`;
-  // let deg = weather.wind.deg;
-  // // wind.style = `transform: rotate(${deg}deg)`;
-  // let wezer = localStorage.getItem('data')
-  // let weatherData = JSON.parse(wezer);
-  // console.log(weatherData)
-
-
+  // e => setCity(e.target.value)
