@@ -2,10 +2,10 @@ const BIG = "BIG";
 const MEDIUM = "MEDIUM";
 const SMALL = "SMALL";
 
-const pageSizeReducer = (state = { pageSize: 4 },action) => {
+const pageSizeReducer = (state = { pageSize: 10},action) => {
     switch (action.type) {
       case BIG:
-        return {...state,pageSize: 12 }             
+        return {...state,pageSize: 10 }             
       case MEDIUM:
         return {...state,pageSize: 8 }
       case SMALL:

@@ -1,9 +1,9 @@
-import '../STYLES/Page.scss'
+import '../STYLES/App.scss'
 
 function Works() {
   return (
       <div className="page">
-        <h1>WORKS</h1>
+        <h3>WORKS</h3>
       </div>
 
 

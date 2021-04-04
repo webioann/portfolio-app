@@ -34,9 +34,9 @@ function SortByNationality() {
     }
      if(display) {
         return (
-            <div className='sort-by-nationality-wraper' onClick={showList}>
-                Nationality
-                <div className='glas-list' >
+            <div className='row sort-by-nationality' onClick={showList}>
+                nationality
+                <div className='col glas-list' >
                     {nationalityCode.map((code,key) =>(<li 
                      onClick={choose} key={key} type={code} >
                           {nationalityList[key]} </li>))}
@@ -45,8 +45,8 @@ function SortByNationality() {
         )
     }else{
         return (
-            <div className='sort-by-nationality-wraper' onClick={showList}>
-                Nationality
+            <div className='row sort-by-nationality' onClick={showList}>
+                nationality
             </div>
         )
     }

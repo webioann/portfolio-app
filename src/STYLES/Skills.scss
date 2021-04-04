@@ -1,0 +1,106 @@
+@import './Null.scss';
+
+.bg-for-skills{
+    background-color: #494b4f;
+    min-height: 100%;
+    font-weight: 400;
+}
+.resume{
+    width: 100%;
+    max-width: 1199px;
+    margin: 0 auto;
+    color: #b1b1b1;
+    height: 100%;
+    .border-bot{
+        height: 1px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #b1b1b1;
+        align-self: center;
+    }
+
+    .about-me{
+        background-color: #2f4b70;
+        padding: 1rem;
+        color: #fff;
+        min-height: 100vh;
+        .border-bot{
+            background-color: #fff;
+            width: 80%;
+            align-self: start;
+        }
+        span{
+            padding: 10px 0; 
+            color: #b1b1b1;;
+        }
+        .avatar{
+            justify-content: center;
+            .photo{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: url('../assets/ioann.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        .skills-title{
+            margin-bottom: 1rem;
+        }
+        .progress-box{
+            height: 1rem;
+            // border: 1px solid #b1b1b1;
+            border-radius: 0.5rem;
+            // justify-content: space-between;
+            // padding-right: 5px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background-color: #b1b1b1;
+            .react,.js,.css,.html,.eng{
+                color: #000;
+                padding-left: 1rem;
+                background-color: #fff;
+                margin-top: -5px;
+                margin-bottom: -5px;
+            }
+            .react{
+                width: 85%;
+            }
+            .js{
+                width: 80%;
+            }
+            .css{
+                width: 90%;
+            }
+            .html{
+                width: 93%;
+            }
+            .eng{
+                width: 50%;
+            }
+        }    
+    }
+    .skills-wraper{
+        background-color: #fff;
+        padding: 1rem;
+        min-height: 100vh;
+        p{
+            padding: 0.25rem 0;
+        }
+        h5{
+            padding: 0.25rem 0;
+        }
+        .big-name{
+            h1{
+                font-weight: 600;
+            }
+        }
+        .next-steps{
+            span{
+                padding-right: 0.25rem;
+            }
+        }
+    }
+}

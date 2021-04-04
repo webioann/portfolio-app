@@ -1,9 +1,11 @@
-import '../STYLES/Page.scss'
+import '../STYLES/App.scss'
 
 function WorkThree() {
   return (
-      <div className="page">
-        <h1>WORK THREE</h1>
+      <div className="container page">
+        <div className="row center">
+          <h3>WORK THREE</h3>
+        </div>
       </div>
 
   );

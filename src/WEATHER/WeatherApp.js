@@ -66,41 +66,37 @@ function WeatherApp() {
   }
 
     return (
-      <div >
-        <div className='weather-app'>
-          <main>
-            <div className="sourch-wraper">
-              <input 
-                className='sourch-bar'
-                type='text'
-                placeholder='Search...'
-                onChange={chooseCity}
-                value={city}
-                onKeyPress={restApi} />
+      <div className='weather-app'>
+          <div className="sourch-wraper">
+            <input 
+              className='sourch-bar'
+              type='text'
+              placeholder='Search...'
+              onChange={chooseCity}
+              value={city}
+              onKeyPress={restApi} />
+          </div>
+          {(typeof data.main != "undefined") ? (
+          <>
+            <div className='location-wraper'>
+              <div className="location">{data.name} ,{data.sys.country}  </div>
+              <div className="date">{createDate}</div>
             </div>
-            {(typeof data.main != "undefined") ? (
-            <>
-              <div className='location-wraper'>
-                <div className="location">{data.name} ,{data.sys.country}  </div>
-                <div className="date">{createDate}</div>
-              </div>
-              <div className='weather-wraper'>
-                <div className="temper">{Math.round(data.main.temp)}&deg;C
-                  <div className="weather">
-                    <span> {data.weather[0].description} </span>
-                    <img src={`https://openweathermap.org/img/wn/${ data.weather[0].icon}@2x.png` } alt=''/>
-                  </div>
+            <div className='weather-wraper'>
+              <div className="temper">{Math.round(data.main.temp)}&deg;C
+                <div className="weather">
+                  <span> {data.weather[0].description} </span>
+                  <img src={`https://openweathermap.org/img/wn/${ data.weather[0].icon}@2x.png` } alt=''/>
                 </div>
-                <Details data={data}/>
               </div>
-            </>
-            ) : (
-              <DefaultPage/>
-            )}
-          </main>
-        </div>
-
+              <Details data={data}/>
+            </div>
+          </>
+          ) : (
+            <DefaultPage/>
+          )}
       </div>
+
   );
 
 }

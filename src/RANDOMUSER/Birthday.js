@@ -24,16 +24,11 @@ function Birthday(props) {
             if(month === 10) {month = 'November'}
             if(month === 11) {month = 'December'}
             let year = dd.getFullYear();
-        birthday = `${day} ${month} in ${year} year`;
-        birthday = `${day} ${month}`;
-        years = `in ${year} year`;
+        birthday = `${day} ${month} ${year}`;
     }
     time();
     return (
-        <div className="double-row-box">
-            <span>{birthday}</span>
-            <span>{years}</span>
-        </div>
+            <p>{birthday}</p>
     )
 }
 export default Birthday;

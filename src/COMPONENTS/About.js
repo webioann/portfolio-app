@@ -1,9 +1,9 @@
-import '../STYLES/Page.scss';
+import '../STYLES/App.scss';
 
 function About() {
   return (
     <div className="page">
-      <h1>ABOUT</h1>
+      <h3>ABOUT</h3>
     </div>
   );
 }
