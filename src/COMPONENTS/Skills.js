@@ -17,7 +17,7 @@ function Skills() {
             <span>nationality</span>
             <h5>Ukrainian</h5> 
             <span>location</span>
-            <h5>Velichiv</h5>
+            <h5>Sarny</h5>
             <div className='row border-bot'></div>
           </div>
           <div className="col progress-bar">

@@ -7,7 +7,6 @@ import SortByNationality from './SortByNationality'
 import Nationality from './Nationality'
 import Birthday from './Birthday'
 import Location from './Location'
-import Loader from './Loader'
 
 import '../STYLES/Randomuser.scss'
 
