@@ -2,10 +2,10 @@ import '../STYLES/Skills.scss';
 
 function Skills() {
   return (
-    <div className="container-fluid bg-for-skills">
+    <div className="container bg-for-skills">
       <div className="row resume">
 
-        <div className="col-4 about-me">
+        <div className="col-3 about-me">
           <div className="row avatar">
             <div className="col photo"></div>
           </div>
@@ -41,7 +41,7 @@ function Skills() {
           </div>
         </div>
 
-        <div className="col-8 skills-wraper">
+        <div className="col-9 skills-wraper">
           <div className="col">
               <h4 className="row big-name">My name Veles Alexander</h4>
               <div className='row border-bot'></div>

@@ -29,7 +29,7 @@ $containerMaxWidth: 1200px;
 html,body{
 	font-family: $font-family;	
 	// @include adaptiv-font(18,14);
-  font-size: 16px;
+  font-size: 14px;
 	height: 100%;
   font-weight: 400;
   color:  $color-1;
@@ -49,8 +49,6 @@ html,body{
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: 0.75rem;
-  padding-left:  0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -64,19 +62,16 @@ html,body{
 // }
 	
 .col{
-	width: 100%;
 	display: flex;
+  flex: 0 0 auto;
 	flex-direction: column;
+  width: 100%;
 	position: relative;
 }
-// .col {
-//     flex: 1 0 0%;
-//   }
-  
 .row{
-	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
+  flex: 0 0 auto;
+  width: 100%;
 	position: relative;
 }
 // .row {
@@ -155,6 +150,9 @@ html,body{
                
 
 @media (min-width: 576px) {
+  html,body{
+    font-size: 15px;
+  }
     .container-sm, .container {
       max-width: 540px;
     }
@@ -163,6 +161,10 @@ html,body{
     }
   }
   @media (min-width: 768px) {
+    html,body{
+      font-size: 16px;
+    }
+  
     .container-md, .container-sm, .container {
       max-width: 720px;
     }
@@ -172,6 +174,10 @@ html,body{
     }
   }
   @media (min-width: 992px) {
+    html,body{
+      font-size: 17px;
+    }
+  
     .container-lg, .container-md, .container-sm, .container {
       max-width: 960px;
     }
@@ -180,6 +186,10 @@ html,body{
     }
   }
   @media (min-width: 1200px) {
+    html,body{
+      font-size: 18px;
+    }
+  
     .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1140px;
     }
@@ -188,6 +198,10 @@ html,body{
     }
   }
   @media (min-width: 1400px) {
+    html,body{
+      font-size: 19px;
+    }
+  
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1320px;
     }

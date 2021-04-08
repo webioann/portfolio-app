@@ -5,7 +5,6 @@ function Birthday(props) {
 
     const data = props.user;
     let birthday = '';
-    let years = '';
     function time () {
         let dd = new Date(data.dob.date);
 

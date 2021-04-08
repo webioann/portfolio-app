@@ -1,65 +1,61 @@
 @import './Null.scss';
-
-
-.bg-for-random-users{
-    background-color: rgba(0,0,0,0.1);
-}
-.randomuser-wraper{
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 0.5rem;
-    .sort-panel{
-        // display: flex;
-        // flex-wrap: wrap;
-        // width: 100%;
-        padding: 10px 10px 10px 50px;
-        button{
-            width: 6rem;
-            padding: 3px 0;
-            margin: 5px;
-            border-radius: 0.25rem;
-            background-color: rgba(255,255,255,0.8);
-            cursor: pointer;
-            &:hover{
-                transform: scale(1.2);
-            }
-        }
-        .block-1{
-            width: 40%;
-        }
-        .block-2{
-            width: 40%;
-        }
-        .block-3{
-            width: 20%;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-            button{
-                transform: scale(1);
-                margin-bottom: 0;
-                width: 100%;
-            }
+.sort-panel{
+    padding: 5px 10px;
+    .button{
+        width: 6rem;
+        padding: 3px;
+        margin: 5px;
+        text-align: center;
+        border-radius: 0.25rem;
+        background-color: rgba(255,255,255,0.8);
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
         }
     }
+    .block-1{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .block-2{
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+    }
+    // .block-3{
+    //     display: flex;
+    //     width: 20%;
+    //     justify-content: flex-end;
+    // }
     .sort-by-nationality{
-        background-color: yellow;
-        border-radius: 4px;
-        width: 100%;
-        padding-left: 10px;
+        display: flex;
+        width: 20%;
+        justify-content: flex-end;
+        z-index: 1000;
+        transform: scale(1);
+        padding: 3px 10px;
+        margin: 5px;
+        border-radius: 0.25rem;
+        // background-color: rgba(255,255,255,0.8);
+        background-color: orange;
+        text-align: center;
         cursor: pointer;
         position: relative;
+        &:hover{
+            transform: scale(1.2);
+        }
         .glas-list{
             position: absolute;
             top: 25px;
             left: 0;
-            padding: 10px 0;
+            cursor: pointer;
+            padding: 10px 15px;
             border: 2px solid  rgba(0,0,0,0.1);
-            border-radius: 5px;
+            border-radius: 0.25rem;
             background-color: white;
-            z-index: 100;
             li{
                 list-style: none;
-                padding: 5px 20px;
                 font-size: 1rem;
             }
             li:hover{
@@ -69,185 +65,173 @@
                 color: red; 
             }
         }
-    }    
+    
+    }
+}    
 
-    .list-wraper{
-        text-align: left;
-        font-weight: 500;
-        .users-list{
-            // width: 100%;
-            transition: 400ms ease;
-            background-color: #fff;
-            z-index: 1;
+.list-wraper{
+    text-align: left;
+    font-weight: 500;
+    background-color: #fff;
+    .users-list{
+        transition: 400ms ease;
+        background-color: #fff;
+    }    
+    .user{
+        padding: 0.5rem;
+        background-color: #fff;
+        p{
+            padding: 5px ;
+        }
+        .first{
+            background-color: rgba(0,0,0,0.2);
+            .photo{
+                width: 75px;
+                height: 75px;
+                border-radius:50%;
+            }
+            .fullname{
+                margin-left: 1rem;
+                justify-content: space-between;
+            }
+        }
+        // .contact{
+        // } 
+        // .location{
+        // }  
+        .nation{
+            .right-text{
+                width: 100%;
+                text-align: right;
+            }
+        }
+    }
+}
+
+/*=============== LEPTOPS =======================*/	
+@media (max-width: 992px) {
+    .sort-panel{
+        align-items: flex-end;
+        flex-wrap: wrap;
+        .button{
+            background-color: red;
+        } 
+        .block-1{
+            width: 50%;
+        }
+        .block-2{
+            width: 50%;
         }    
+        .sort-by-nationality{
+            width: 20%;
+            .glas-list{
+                background-color: green;
+            }
+        }    
+  
+    }
+    .list-wraper{
         .user{
-            border-bottom: 1px solid $color-1;
-            padding: 0.5rem 0;
-            background-color: yellow;
-            &:last-child{
-                border: 0;
-            }
-            p{
-                padding: 5px ;
-            }
+            flex-wrap: wrap;
             .first{
-                background-color: blue;
-                .avatar{
-                    .photo{
-                        width: 75px;
-                        height: 75px;
-                        border-radius:50%;
-                    }
+                width: 50%;
+                .photo{
+                    width: 75px;
+                    height: 75px;
+                    border-radius:50%;
                 }
                 .fullname{
-                    flex: 0 1 auto;
                     justify-content: space-between;
-                    // padding: 0 5px;
                 }
             }
             .contact{
-                background-color: green;
+                width: 50%;
             } 
             .location{
-                background-color: #fff;
+                width: 50%;
             }  
             .nation{
-                background-color: aqua;
+                width: 50%;
                 .right-text{
                     width: 100%;
                     text-align: right;
                 }
             }
         }
+    
     }
-}
-/*=============== TABLETS =======================*/	
-@media (max-width: 768px) {
-    .sort-panel{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-         button{
-            // margin-left: 0.5rem;
-            width: 3rem;
-            padding: 3px 0;
-            margin: 3px;
-        } 
-        .block-1{
-            width: 25%;
-            // background-color: blue;
-            button:first-child{
-                display: none;
-            }
-        }
-        .block-2{
-            width: 50%;
-            display: flex;
-            flex-wrap: nowrap;
 
-        }    
-        .block-3{
-            width: 25%;
-        //    margin-left: auto;
-        }    
-    }
 }
+// /*================  TABLETS ====================*/
+// @media (max-width: 768px) {
+//     .sort-panel{
+//         flex-wrap: wrap;
+//         padding: 5px;
+//     }
+// }
 
 /*============== MOBILE ========================*/
 
 @media (max-width: 575px) { 
     .sort-panel{
-        width: 100%;
-        display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
-        button{
-            margin-left: 0.5rem;
-            width: 3rem;
-            padding: 3px 0;
-        }    
-    }
-    .block-1{
-        width: 100%;
-        button:first-child{
-            display: flex;
+        .block-1{
+            width: 100%;
         }
-
-    }
-    .block-2{
-        width: 100%;
-    }    
-    .block-3{
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }    
-
-
-    .list-header{
-        display: none;
-        height: 0;
-        background-color: #ccc;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        transform: scale(0,0);
-    }
-    .user{
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: flex-start;
-        font-size: 1rem;
-        border: 0;
-        .first{
-            display: flex;
-            position: relative;
-            z-index: 3;
-            background-color: rgba(0,0,0,0.07);
-            &::before{
-                content:'';
-                width: 100%;
-                height: 80px;
-                // border-radius: 38px 4px 4px 38px;
-                border-radius: 6px 6px 0 0;
-                background-color: rgba(0,0,0,0.2);
-                position: absolute;
-                top: -1px;
-                left: 0;
-                z-index: 1;
-                // border: 2px solid rgba(0,0,0,0.3);
+        .block-2{
+            width: 100%;
+        }    
+        .sort-by-nationality{
+            width: 50%;
+            .glas-list{
+                background-color: green;
             }
-            .avatar{
-                flex: 0 1 75px;
-                .photo{
-                    // border: 2px solid rgba(0,0,0,0.3);
-                    border-radius: 6px 0 0 0;
+        }    
+    
+    }
+    .list-wraper{
+        .user{
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-size: 1rem;
+            border-bottom: 0;
+            .first{
+                border-radius: 6px 6px 0 0;
+                width: 100%;
+                display: flex;
+                position: relative;
+                z-index: 3;
+                .fullname{
+                    width: 100%;
+                    // display: flex;
+                    // flex-direction: column;
+                    // justify-content: flex-start;
+                    // flex: 0 1 auto;
+                    // padding: 10px;
+                    // font-size: 1.2rem;
                 }
             }
-            .fullname{
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                flex: 0 1 auto;
-                padding: 10px;
-                font-size: 1.2rem;
+            .contact{
+                justify-content: flex-end;
+                width: 100%;
+                border-left: 1px solid rgba(0,0,0,0.2);
+                border-right: 1px solid rgba(0,0,0,0.2);
+            } 
+            .location{
+                width: 100%;
+                border-left: 1px solid rgba(0,0,0,0.2);
+                border-right: 1px solid rgba(0,0,0,0.2);
+            }  
+            .nation{
+                width: 100%;
+                padding: 0;
+                padding-right: 30px;
+                background-color: rgba(0,0,0,0.2);
+                border-radius: 0 0 6px 6px;
             }
         }
-        .contact{
-            background-color: rgba(0,0,0,0.07);
-            padding: 0;
-        } 
-        .location{
-            padding: 0;
-            background-color: rgba(0,0,0,0.07);
-        }  
-        .nation{
-            padding: 0;
-            padding-left: 30px;
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 0 0 6px 6px;
-        }
+    
     }
     
     

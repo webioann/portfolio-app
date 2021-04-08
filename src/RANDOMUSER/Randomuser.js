@@ -15,7 +15,7 @@ function Randomuser() {
     const gender = useSelector(state => state.gender.gender)
     const pageSize = useSelector(state => state.pageSize.pageSize)
     const natio = useSelector(state => state.natio.natio)
-    const show = useSelector(state => state.showList.showList)
+    // const show = useSelector(state => state.showList.showList)
     
    
     const[isLoad,setisLoad] = useState(true);
@@ -41,10 +41,6 @@ function Randomuser() {
         const smallPage = () => {
             dispatch(smallPageAction(pageSize))
         }
-        function showList () {
-            dispatch(showListAction(show))
-         }
-     
 
     const useContacts = () => {
         useEffect(() => {
@@ -74,61 +70,53 @@ function Randomuser() {
     if (!contacts.isLoad && !contacts.isError){
 
     return (
-        <div className='container-fluid bg-for-random-users'>
-            <div className='container randomuser-wraper'>
-                    <div className='row sort-panel'> 
-                        <div className='block-1'> 
-                            <button onClick={bigPage}>10 on page</button>
-                            <button onClick={mediumPage}>8  on page</button>
-                            <button onClick={smallPage}>4  on page</button>
+        <div className='container randomuser-wraper'>
+                <div className='row sort-panel'> 
+                    <div className='block-1'> 
+                        <div className="button" onClick={bigPage}>10 on page</div>
+                        <div className="button" onClick={mediumPage}>
+                            8  on page
                         </div>
-                        <div className='block-2'>
-                            <button onClick={allSex}>all sex</button>
-                            <button onClick={female}>women</button>
-                            <button onClick={male}>men</button>
-                        </div>
-                        <div className='block-3'> 
-                            <button onClick={showList} className='btn-sort-nation'>
-                                <SortByNationality/>
-                            </button>
-                        </div>
+                        <div className="button" onClick={smallPage}>4  on page</div>
                     </div>
-
-
-                <div className='col list-wraper'>
-                    <div className='col users-list'>
-                        {user.map((user) => (<li className='row user' key={user.login.uuid} >
-                            <div className='col-3 first'>
-                                <div className="row">
-                                    <div className='col-4 md avatar'>
-                                        <img src={user.picture.medium} className='photo' alt=''/>
-                                    </div>
-                                    <div className='col-8 md  col fullname'>
-                                        <p>{user.name.first} {user.name.last}</p>
-                                        <Birthday user={user}/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='col-4 col contact'>
-                                    <p>Phone:  {user.phone}</p>
-                                    <p>{user.email}</p>
-                            </div>
-
-                            <div className='col-3 col location'> 
-                                <Location user={user}/>
-                            </div>
-
-                            <div className='col-2 nation'> 
-                                <Nationality user={user}/> 
-                            </div>
-
-                        </li>))}
-                    </div> 
+                    <div className='block-2'>
+                        <div className="button" onClick={allSex}>all sex</div>
+                        <div className="button" onClick={female}>women</div>
+                        <div className="button" onClick={male}>men</div>
+                    </div>
+                            <SortByNationality/>
                 </div>
-            </div>
 
+
+            <div className='col list-wraper'>
+                <div className='col users-list'>
+                    {user.map((user) => (<li className='row user' key={user.login.uuid} >
+                        <div className="row col-3 first">
+                                <img src={user.picture.medium} className='col photo' alt=''/>
+                            <div className='col fullname'>
+                                <p>{user.name.first} {user.name.last}</p>
+                                <Birthday user={user}/>
+                            </div>
+                        </div>
+
+                        <div className='col-4 col contact'>
+                                <p>Phone:  {user.phone}</p>
+                                <p>{user.email}</p>
+                        </div>
+
+                        <div className='col-3 col location'> 
+                            <Location user={user}/>
+                        </div>
+
+                        <div className='col-2 nation'> 
+                            <Nationality user={user}/> 
+                        </div>
+
+                    </li>))}
+                </div> 
+            </div>
         </div>
+
     )
     }else if (contacts.isLoad) {
         return (
