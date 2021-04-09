@@ -3,7 +3,6 @@
 .bg-for-skills{
     background-color: #494b4f;
     min-height: 100%;
-    font-weight: 400;
 }
 .resume{
     width: 100%;
@@ -23,7 +22,6 @@
         background-color: #2f4b70;
         padding: 1rem;
         color: #fff;
-        min-height: 100vh;
         .border-bot{
             background-color: #fff;
             width: 80%;
@@ -33,27 +31,21 @@
             padding: 10px 0; 
             color: #b1b1b1;;
         }
-        .avatar{
-            justify-content: center;
-            .photo{
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-                background: url('../assets/ioann.jpg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
+        .photo{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: url('../assets/ioann.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .skills-title{
             margin-bottom: 1rem;
         }
         .progress-box{
             height: 1rem;
-            // border: 1px solid #b1b1b1;
             border-radius: 0.5rem;
-            // justify-content: space-between;
-            // padding-right: 5px;
             margin-bottom: 1rem;
             overflow: hidden;
             background-color: #b1b1b1;
@@ -84,7 +76,6 @@
     .skills-wraper{
         background-color: #fff;
         padding: 1rem;
-        min-height: 100vh;
         p{
             padding: 0.25rem 0;
         }
@@ -93,7 +84,7 @@
         }
         .big-name{
             h1{
-                font-weight: 600;
+                font-weight: 400;
             }
         }
         .next-steps{
@@ -102,4 +93,80 @@
             }
         }
     }
+}
+@media (max-width: 992px) {
+    .resume{
+        flex-direction: column;
+        .about-me{
+            flex-direction: column;
+            width: 100%;
+            .info-wraper{
+                .item-box{
+                    flex-direction: row;
+                    // justify-content: space-between;
+                }
+                .item-box>span{
+                    width: 33.3333%;
+                    color:red;
+                }
+            }
+        }
+        .skills-wraper{
+            width: 100%;
+        }
+    }
+     
+ }
+ @media (max-width: 768px) {
+    .resume{
+        flex-direction: column;
+        .about-me{
+            flex-direction: column;
+            width: 100%;
+            .info-wraper{
+                flex-direction: row;
+                .item-box{
+                    flex-direction: row;
+                    // justify-content: space-between;
+                }
+                .item-box{
+                    margin-left: 10px;
+                    span{
+                    width: 20%;
+                    color:red;
+                    }
+                }
+            }
+        }
+        .skills-wraper{
+            width: 100%;
+        }
+    }
+
+}
+@media (max-width: 576px) {
+    .resume{
+        flex-direction: column;
+        .about-me{
+            flex-direction: column;
+            width: 100%;
+            .info-wraper{
+                flex-direction: column;
+                .item-box{
+                    flex-direction: column;
+                    // justify-content: space-between;
+                }
+                .item-box{
+                    flex-direction: row;
+                    span{
+                    color:green;
+                    }
+                }
+            }
+        }
+        .skills-wraper{
+            width: 100%;
+        }
+    }
+
 }

@@ -6,20 +6,31 @@ function Skills() {
       <div className="row resume">
 
         <div className="col-3 about-me">
-          <div className="row avatar">
-            <div className="col photo"></div>
+
+          <div className="col info-wraper">
+              <div className="row photo"></div>
+            <div className="col name">
+              <div className="col item-box">
+                <span>name </span>
+                <h6>Veles Alexander</h6> 
+              </div>
+              <div className="col item-box">
+                <span>age / marige</span>
+                <h6>43 years is old / merige</h6>
+              </div>
+              <div className="col item-box">
+                <span>nationality</span>
+                <h6>Ukrainian</h6> 
+              </div>
+              <div className="col item-box">
+                <span>location</span>
+                <h6>Sarny</h6>
+              </div>
+            </div>
           </div>
-          <div className="col name">
-            <span>name </span>
-            <h2>Veles Alexander</h2> 
-            <span>age / marige</span>
-            <h5>43 years is old / merige</h5>
-            <span>nationality</span>
-            <h5>Ukrainian</h5> 
-            <span>location</span>
-            <h5>Sarny</h5>
-            <div className='row border-bot'></div>
-          </div>
+
+          <div className='row border-bot'></div>
+
           <div className="col progress-bar">
             <h4 className='skills-title'>Skills</h4>
             <div className="row progress-box">
@@ -54,7 +65,7 @@ function Skills() {
           </div>
           <div className="col skills">
               <div className="row react-text">
-                <h5 className="row title">React</h5>
+                <h5 className="col-4 title">React</h5>
                 <p> Создаю компоненты, в основом, на react-hooks,а состояние при помощи Redux.Фиксю с redux-logger </p>
               </div>
               <div className="col js-text">
