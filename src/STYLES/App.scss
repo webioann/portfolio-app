@@ -1,95 +1,9 @@
-@import './Null.scss';
+@import './TotallStyle.scss';
 
-.test-h1{
-  font-size: 50px;
+.app{
+  margin-top: 0px;
 }
-.test-p{
-  font-size: 20px;
-}
-.test-row{
-  width: 90%;
-  background-color: #ccc;
-  padding: 2rem;
-}
-.burger{
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 5px;
-  left: 16px;
-  cursor: pointer; 
-  z-index: 22;
-  div{
-    width: 100%;
-    height: 6px;
-    margin-bottom: 4px;
-    background-color: blue;
-  }    
-}  
-// .nav-bar-none{
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 10px;
-//   border-radius: 0 0 8px 8px;
-//   margin-bottom: 10px;
-//   line-height: 2;
-//   opacity: 0; 
-//   position: absolute;
-//   top: -80px;
-//   left: 0;
-//   transition: top 1200ms ease ;
-//   transition: opacity 1200ms ease ;
 
-  
-//   li{
-//     list-style: none;
-//     max-width: 200px;
-//     text-decoration: underline;
-//     &:first-child{
-//       margin-left: 40px;
-//     }
-//   }
-//   li a{
-//     text-transform: uppercase;
-//     text-decoration: none;
-//     color: #fff;
-//     font-weight: 600;
-//     // background-color: rgba(255,255,255,0.7);
-//     padding: 5px 10px;
-//     border-radius: 4px;
-//   }
-// }
-.nav-bar{
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: rgba(0,0,0,0.7);
-  opacity: 1; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: top 1200ms ease ;
-  transition: opacity 1200ms ease ;
-  z-index: 15;
-  li{
-    max-width: 200px;
-    text-decoration: underline;
-  }
-  li a{
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    // background-color: rgba(255,255,255,0.7);
-    padding: 5px 10px;
-    border-radius: 4px;
-    &:hover{
-      color: red;
-    }
-  }
-}
 @media (max-width: 1199px) {
   html,body {
       font-size: 19px;
@@ -114,18 +28,12 @@
   .container{
     max-width: 720px;
   }
-  // .nav-bar{
-  //   flex-direction: column;
-  // }
-  // .nav-bar-none{
-  //   flex-direction: column;
-  // }
 }
 
 @media (max-width: 575px) { 
-  html,body {
-      font-size: 16px;
-  } 
+  .app{
+    margin-top: 0px;
+  }
   .container{
       max-width: 100%;
   }

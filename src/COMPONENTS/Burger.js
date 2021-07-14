@@ -6,21 +6,21 @@ import '../STYLES/App.scss';
 function Burger() {
     const dispatch = useDispatch();
     const showMenu = useSelector(state => state.showMenu.showMenu);
+
+  
     
 useEffect(() => {
     console.log('U P  D A T A')
 }, [showMenu])
 
     const showMenuItem = () => {
-        
         if(showMenu === 'nav-bar-none') {
-            dispatch(showMenuAction(showMenu));
+            dispatch(showMenuAction(showMenu)); 
         }
         else{
             setTimeout(() => {
                 dispatch(closeMenuAction(showMenu));
             }, 1000 )
-           
         }
     }
 

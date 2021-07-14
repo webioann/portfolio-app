@@ -1,0 +1,59 @@
+@import './TotallStyle.scss';
+
+.navbar{
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  .menu{
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.7);
+    li{
+      width: 25%;
+      text-align: center;
+    }
+    li a{
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600;
+       &:hover{
+        color: #ccc;
+      }
+    }
+  }
+}
+//====================== media-queris ===========================//
+@media (max-width: 576px) {
+  .navbar{
+    .menu{
+      li{
+        width: 50%;
+      }
+      li a{
+        font-size: 0.8rem;
+      }
+      li:nth-child(odd){
+        text-align: left;
+      }
+
+      li:nth-child(even){
+        text-align: right;
+      }
+    }
+  
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar{
+    .menu{
+      li a{
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

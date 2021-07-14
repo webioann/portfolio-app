@@ -100,8 +100,8 @@ function Randomuser() {
                         </div>
 
                         <div className='col-4 col contact'>
-                                <p>Phone:  {user.phone}</p>
-                                <p>{user.email}</p>
+                                <p>Phone: {user.phone}</p>
+                                <p>Email: {user.email}</p>
                         </div>
 
                         <div className='col-3 col location'> 
