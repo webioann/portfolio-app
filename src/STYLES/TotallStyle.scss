@@ -2,47 +2,24 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 
-// fonts
-$font-family: 'Lato', Helvetica, sans-serif;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-heavy: 700;
-$font-height: 1.5;
-
-//colors
 $color-1: #212529;
 $dark-grey: #333447;
-
-//container max-width
-$containerMaxWidth: 1200px;
-//============MIXINS=============//
-@mixin adaptiv-font($pcSize, $mobSize) {
- $addSize: $pcSize - $mobSize;
- $addMobSize: $addSize + $addSize * 0.7;
-
- @media (max-width: 767px) {
-	font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$containerMaxWidth}));
- }
- @media (min-width: 768px) {
-	font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$containerMaxWidth}));
- }
-}
-
 html,body{
-	font-family: $font-family;	
-	// @include adaptiv-font(18,14);
-  font-size: 16px;
+	font-family: 'Lato', Helvetica, sans-serif;	
 	height: 100%;
   font-weight: 400;
   color:  $color-1;
   background-color: #fff;
 	width: 100%;
-	font-size: 100%;
-	line-height: $font-height;
+	// line-height: $font-height;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
+body{
+  background-color: green;
+}
+
 //=========================GREED STYLING====================//
 .container,
 .container-fluid,
@@ -52,12 +29,11 @@ html,body{
 .container-md,
 .container-sm {
   width: 100%;
-	max-width:$containerMaxWidth;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	position: relative;
-
+  background-color: #fff;
 }
 .col{
 	display: flex;
@@ -73,76 +49,88 @@ html,body{
 	position: relative;
 }
  .col-1 {
+    display: flex;
     flex: 0 0 auto;
     width: 8.3333333333%;
 }
 .col-2 {
+    display: flex;
     flex: 0 0 auto;
     width: 16.6666666667%;
 }
 .col-3 {
+  display:flex;
     flex: 0 0 auto;
     width: 25%;
 }
 .col-4 {
+    display: flex;
     flex: 0 0 auto;
     width: 33.3333333333%;
 }
 .col-5 {
+  display:flex;
     flex: 0 0 auto;
     width: 41.6666666667%;
 }
 .col-6 {
+    display: flex;
     flex: 0 0 auto;
     width: 50%;
 }
 .col-7 {
+    display: flex;
     flex: 0 0 auto;
     width: 58.3333333333%;
 }
 .col-8 {
+    display: flex;
     flex: 0 0 auto;
     width: 66.6666666667%;
 }
 .col-9 {
+    display: flex;
     flex: 0 0 auto;
     width: 75%;
 }
 .col-10 {
+    display: flex;
     flex: 0 0 auto;
     width: 83.3333333333%;
 }
 .col-11 {
+    display: flex;
     flex: 0 0 auto;
     width: 91.6666666667%;
 }
 .col-12 {
+    display: flex;
     flex: 0 0 auto;
     width: 100%;
 }
 .col-auto{
+    display: flex;
     flex: 0 0 auto;
     width: auto;
 }
                
 //===================media-queris================================//
-@media (max-width: 576px) {
-  html,body{
-    font-size: 15px;
-  }
-    .container-sm, .container {
-      max-width: 540px;
-    }
-    .sm {
-        flex: 1 0 0%;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 575px) {
   html,body{
     font-size: 16px;
   }
+  .container-sm, .container {
+    max-width: 540px;
+  }
+  .sm {
+      flex: 1 0 0%;
+  }
+}
 
+@media (min-width: 576px) and (max-width: 767px) {
+  html,body{
+    font-size: 16px;
+  }
   .container-md, .container-sm, .container {
     max-width: 720px;
   }
@@ -152,7 +140,7 @@ html,body{
   }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 991px) {
   html,body{
     font-size: 17px;
   }
@@ -165,11 +153,10 @@ html,body{
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1399px) {
   html,body{
     font-size: 18px;
   }
-
   .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
   }
@@ -178,7 +165,7 @@ html,body{
   }
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 1400px) {
   html,body{
     font-size: 19px;
   }
@@ -235,9 +222,7 @@ a:focus,a:active{outline: none;}
   
 button,input,optgroup,select,textarea {
 	border-radius: 0;
-    font-family: $font-family; /* 1 */
     font-size: 100%; /* 1 */
-    line-height: $font-height; /* 1 */
     margin: 0; /* 2 */
 }
 input::-ms-clear{display: none;}
@@ -299,7 +284,6 @@ outline-offset: -2px; /* 2 */
 }
 ::-webkit-file-upload-button {
 -webkit-appearance: button; /* 1 */
-font: $font-family; /* 2 */
 }
 
 ul li{list-style: none;}

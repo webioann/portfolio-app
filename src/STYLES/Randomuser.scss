@@ -1,7 +1,25 @@
 @import './TotallStyle.scss';
+
+.table-top{
+    position: sticky;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+@media (max-width: 575px) {
+    .table-top-wraper{
+        display: none;
+    }
+}
+//===================================//
 .sort-panel{
     padding: 5px 10px;
-    background-color: #cecece;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);;
     .button{
         width: 6rem;
         padding: 3px;
@@ -11,12 +29,12 @@
         background-color: rgba(255,255,255,0.8);
         cursor: pointer;
     }
-    .block-1{
+    .users-on-page{
         width: 40%;
         display: flex;
         justify-content: space-between;
     }
-    .block-2{
+    .gender-buttons{
         display: flex;
         width: 40%;
         justify-content: space-between;
@@ -26,6 +44,7 @@
     //     width: 20%;
     //     justify-content: flex-end;
     // }
+    //=============================================//
     .sort-by-nationality{
         display: flex;
         width: 20%;
@@ -63,46 +82,98 @@
     
     }
 }    
-
-.list-wraper{
-    text-align: left;
-    font-weight: 500;
-    background-color: #fff;
-    .users-list{
-        transition: 400ms ease;
-        background-color: #fff;
-    }    
+//============================================//
+.users-list{
     .user{
-        padding: 0.5rem;
-        background-color: #fff;
-        p{
-            padding: 5px ;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid rgb(100, 94, 94);
+        border-radius: 0 0 0.5rem 0.5rem;
+        margin-bottom: 5px;
+        .photo{
+            width: 75px;
+            height: 75px;
+            border-radius:50%;
+            margin: 5px;
         }
-        .first{
-            background-color: rgba(0,0,0,0.2);
-            .photo{
-                width: 75px;
-                height: 75px;
-                border-radius:50%;
-            }
-            .fullname{
-                margin-left: 1rem;
-                justify-content: space-between;
+        .fullname{
+            padding: 5px;
+            color: blue;
+            flex-grow: 1;
+            .nation{
+                color:chartreuse;
+                padding: 5px;
             }
         }
-        // .contact{
-        // } 
-        // .location{
-        // }  
+        .birthday{
+            flex-grow: 1;
+            padding: 5px;
+        }
+        .contact{
+            padding: 5px;
+            flex-grow: 1;
+        } 
+        .location{
+                padding: 0 5px;
+        }  
+
+    }
+}    
+@media (max-width: 575px) {
+    .user{
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        .photo{
+            margin-right: 20px;
+        }
+        .fullname{
+            flex-grow: 1;
+            span{
+                font-size: 1.5rem;
+            }
+        }
+        .birthday{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact{
+            width: 100%;
+            border-top: 1px dashed $color-1;
+            border-bottom: 1px dashed $color-1;
+        } 
+        .location{
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 5px;
+            span{
+                flex-grow: 1;
+            }
+        }  
         .nation{
-            .right-text{
-                width: 100%;
-                text-align: right;
-            }
+            width: 100%;
         }
+
     }
 }
+@media (max-width: 991px) {
+    .user{
+        flex-wrap: wrap;
+        .location{
+            flex-direction: row;
+            width: 100%;
+            border-top: 1px dashed $color-1;
+            span{
+                padding-right: 10px;
+            }
+        }
 
+    }
+}
 /*=============== LEPTOPS =======================*/	
 @media (max-width: 992px) {
     .sort-panel{
@@ -111,10 +182,10 @@
         .button{
             background-color: red;
         } 
-        .block-1{
+        .users-on-page{
             width: 50%;
         }
-        .block-2{
+        .gender-buttons{
             width: 50%;
         }    
         .sort-by-nationality{
@@ -125,55 +196,15 @@
         }    
   
     }
-    .list-wraper{
-        .user{
-            flex-wrap: wrap;
-            .first{
-                width: 50%;
-                .photo{
-                    width: 75px;
-                    height: 75px;
-                    border-radius:50%;
-                }
-                .fullname{
-                    justify-content: space-between;
-                }
-            }
-            .contact{
-                width: 50%;
-            } 
-            .location{
-                width: 50%;
-            }  
-            .nation{
-                width: 50%;
-                .right-text{
-                    width: 100%;
-                    text-align: right;
-                }
-            }
-        }
-    
-    }
 
 }
-// /*================  TABLETS ====================*/
-// @media (max-width: 768px) {
-//     .sort-panel{
-//         flex-wrap: wrap;
-//         padding: 5px;
-//     }
-// }
-
-/*============== MOBILE ========================*/
-
 @media (max-width: 575px) { 
     .sort-panel{
         flex-direction: column;
-        .block-1{
+        .users-on-page{
             width: 100%;
         }
-        .block-2{
+        .gender-buttons{
             width: 100%;
         }    
         .sort-by-nationality{
@@ -182,50 +213,6 @@
                 background-color: green;
             }
         }    
-    
-    }
-    .list-wraper{
-        .user{
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: flex-start;
-            font-size: 1rem;
-            border-bottom: 0;
-            .first{
-                border-radius: 6px 6px 0 0;
-                width: 100%;
-                display: flex;
-                position: relative;
-                z-index: 3;
-                .fullname{
-                    width: 100%;
-                    // display: flex;
-                    // flex-direction: column;
-                    // justify-content: flex-start;
-                    // flex: 0 1 auto;
-                    // padding: 10px;
-                    // font-size: 1.2rem;
-                }
-            }
-            .contact{
-                justify-content: flex-end;
-                width: 100%;
-                border-left: 1px solid rgba(0,0,0,0.2);
-                border-right: 1px solid rgba(0,0,0,0.2);
-            } 
-            .location{
-                width: 100%;
-                border-left: 1px solid rgba(0,0,0,0.2);
-                border-right: 1px solid rgba(0,0,0,0.2);
-            }  
-            .nation{
-                width: 100%;
-                padding: 0;
-                padding-right: 30px;
-                background-color: rgba(0,0,0,0.2);
-                border-radius: 0 0 6px 6px;
-            }
-        }
     
     }
     

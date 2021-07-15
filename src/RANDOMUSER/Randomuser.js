@@ -7,6 +7,7 @@ import SortByNationality from './SortByNationality'
 import Nationality from './Nationality'
 import Birthday from './Birthday'
 import Location from './Location'
+import TableTop from './TableTop';
 
 import '../STYLES/Randomuser.scss'
 
@@ -42,11 +43,12 @@ function Randomuser() {
             dispatch(smallPageAction(pageSize))
         }
 
+    let URL = `https://randomuser.me/api/?page=1&results=${pageSize}&nat=${natio}&gender=${gender}`;
+
     const useContacts = () => {
         useEffect(() => {
                 const getContacts = async () => {
                     try {
-                        let URL = `https://randomuser.me/api/?page=1&results=${pageSize}&nat=${natio}&gender=${gender}`;
                         const response = await fetch(URL)
                         const {results,error} = await response.json();
                         if (error) {
@@ -66,55 +68,47 @@ function Randomuser() {
         
     const contacts = useContacts();
     const user = contacts.data;
+    console.log(user);
 
     if (!contacts.isLoad && !contacts.isError){
 
     return (
         <div className='container randomuser-wraper'>
-                <div className='row sort-panel'> 
-                    <div className='block-1'> 
-                        <div className="button" onClick={bigPage}>10 on page</div>
-                        <div className="button" onClick={mediumPage}>
-                            8  on page
-                        </div>
-                        <div className="button" onClick={smallPage}>4  on page</div>
-                    </div>
-                    <div className='block-2'>
-                        <div className="button" onClick={allSex}>all sex</div>
-                        <div className="button" onClick={female}>women</div>
-                        <div className="button" onClick={male}>men</div>
-                    </div>
-                            <SortByNationality/>
+            <div className='row sort-panel'> 
+                <div className='row users-on-page'> 
+                    <div className="button" onClick={bigPage}>10 on page</div>
+                    <div className="button" onClick={mediumPage}>8  on page</div>
+                    <div className="button" onClick={smallPage}>4  on page</div>
                 </div>
-
-
-            <div className='col list-wraper'>
-                <div className='col users-list'>
-                    {user.map((user) => (<li className='row user' key={user.login.uuid} >
-                        <div className="row col-3 first">
-                                <img src={user.picture.medium} className='col photo' alt=''/>
-                            <div className='col fullname'>
-                                <p>{user.name.first} {user.name.last}</p>
-                                <Birthday user={user}/>
-                            </div>
-                        </div>
-
-                        <div className='col-4 col contact'>
-                                <p>Phone: {user.phone}</p>
-                                <p>Email: {user.email}</p>
-                        </div>
-
-                        <div className='col-3 col location'> 
-                            <Location user={user}/>
-                        </div>
-
-                        <div className='col-2 nation'> 
-                            <Nationality user={user}/> 
-                        </div>
-
-                    </li>))}
-                </div> 
+                <div className='row gender-buttons'>
+                    <div className="button" onClick={allSex}>all sex</div>
+                    <div className="button" onClick={female}>women</div>
+                    <div className="button" onClick={male}>men</div>
+                </div>
+                <SortByNationality/>
+                <div className='restart-button'>
+                </div>
             </div>
+            <div className='table-top-wraper'>
+                <TableTop/>
+            </div>
+            
+            <ul className='col users-list'>
+                {user.map((user) => (<li className='row user' key={user.login.uuid} >
+                    <img src={user.picture.medium} className='col-1 photo' alt=''/>    
+                    <div className='col-2 col fullname'>
+                        <span>{user.name.first} {user.name.last}</span>
+                        <Nationality user={user}/> 
+                    </div>
+                    <Birthday user={user}/>
+                    <div className='col-3 col contact'>
+                        <p>Phone: {user.phone}</p>
+                        <p>{user.email}</p>
+                    </div>
+                    <Location user={user}/>
+                    
+                </li>))}
+            </ul> 
         </div>
 
     )

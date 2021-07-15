@@ -6,10 +6,11 @@ function Nationality(props) {
 
     const nation = props.user.nat;
     const result = national[nation]; 
+    
     return (
-        <p className='right-text'>
+        <div className='col-1 nation'>
             {result}
-        </p>
+        </div>
     )
 }
 

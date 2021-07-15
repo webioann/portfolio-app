@@ -6,13 +6,12 @@ import WeatherApp from '../WEATHER/WeatherApp'
 import WorkThree from './WorkThree'
 import Navbar from './Navbar'
 import '../STYLES/App.scss'
-import '../STYLES/Null.scss'
 
 function App() {
 
   return (
     <Router>
-      <div className="container">
+      <div className="portfolio">
         <Navbar/>
         <div className='col app'>
           <Switch>

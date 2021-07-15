@@ -3,10 +3,10 @@ import '../STYLES/Randomuser.scss'
 
 function Birthday(props) {
 
-    const data = props.user;
+    const user = props.user;
     let birthday = '';
     function time () {
-        let dd = new Date(data.dob.date);
+        let dd = new Date(user.dob.date);
 
             let day = dd.getDate();
             let month = dd.getMonth();
@@ -27,7 +27,11 @@ function Birthday(props) {
     }
     time();
     return (
+        <div className='col col-2 birthday'>
+            <p>Age: {user.dob.age} years.</p>
             <p>{birthday}</p>
+
+        </div>
     )
 }
 export default Birthday;

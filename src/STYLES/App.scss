@@ -1,40 +1,14 @@
 @import './TotallStyle.scss';
 
-.app{
-  margin-top: 0px;
-}
+.portfolio{
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 10px;
+  background-color: blue;
 
-@media (max-width: 1199px) {
-  html,body {
-      font-size: 19px;
-  }
-  .container{ 
-      max-width: 1140px;
-  }
-}
-
-@media (max-width: 991px) {
-  html,body {
-      font-size: 18px;
-  }
-  .container{ 
-      max-width: 960px;
-  }
-}
-@media (max-width: 768px) {
-  html,body {
-    font-size: 17px;
-    }
-  .container{
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 575px) { 
   .app{
     margin-top: 0px;
   }
-  .container{
-      max-width: 100%;
-  }
+  
 }
+
