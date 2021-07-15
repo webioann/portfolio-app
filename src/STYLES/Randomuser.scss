@@ -14,7 +14,25 @@
         display: none;
     }
 }
-//===================================//
+@media (min-width: 576px) and (max-width: 991px) {
+    .table-top div:nth-child(1){
+        width: 5%;
+    }
+    .table-top div:nth-child(2){
+        width: 20%;
+    }
+    .table-top div:nth-child(3){
+        width: 25%;
+    }
+    .table-top div:nth-child(4){
+        width: 40%;
+    }
+
+    .table-top .loc{
+        display: none;
+    }
+}
+//======================================================//
 .sort-panel{
     padding: 5px 10px;
     margin: 10px 0;
@@ -38,6 +56,13 @@
         display: flex;
         width: 40%;
         justify-content: space-between;
+    }
+    .restart-wraper{
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        background-color: #ccc;
+        border-radius: 3px;
     }
     // .block-3{
     //     display: flex;
@@ -89,8 +114,6 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        border-bottom: 1px solid rgb(100, 94, 94);
-        border-radius: 0 0 0.5rem 0.5rem;
         margin-bottom: 5px;
         .photo{
             width: 75px;
@@ -114,11 +137,17 @@
         .contact{
             padding: 5px;
             flex-grow: 1;
+            p{
+                display: flex;
+                align-items: center;
+            }
         } 
         .location{
                 padding: 0 5px;
         }  
-
+        &:nth-child(2n){
+            background-color: #ccc;
+        }
     }
 }    
 @media (max-width: 575px) {
@@ -131,6 +160,7 @@
         }
         .fullname{
             flex-grow: 1;
+            
             span{
                 font-size: 1.5rem;
             }
@@ -160,9 +190,18 @@
 
     }
 }
-@media (max-width: 991px) {
+@media (min-width: 576px) and(max-width: 991px) {
     .user{
         flex-wrap: wrap;
+        // .fullname{
+        //     width: 23%;
+        // }
+        // .birthday{
+        //     width: 23%;
+        // }
+        .contact{
+            width: 40%;
+        }
         .location{
             flex-direction: row;
             width: 100%;

@@ -8,7 +8,10 @@ import Nationality from './Nationality'
 import Birthday from './Birthday'
 import Location from './Location'
 import TableTop from './TableTop';
-
+import { FaPhone} from 'react-icons/fa';
+import { AiOutlineMail } from "react-icons/ai";
+import { VscDebugRestart } from "react-icons/vsc";
+import { ImManWoman } from "react-icons/im";
 import '../STYLES/Randomuser.scss'
 
 function Randomuser() {
@@ -19,6 +22,7 @@ function Randomuser() {
     // const show = useSelector(state => state.showList.showList)
     
    
+    const[restart,setRestart] = useState(false);
     const[isLoad,setisLoad] = useState(true);
     const[isError,setisError] = useState(false);
     const[data,setData] = useState([]);
@@ -61,14 +65,20 @@ function Randomuser() {
                     finally {setisLoad(false);}
                 }
                 getContacts();
+                
             }
-        ,[gender,pageSize,natio]);
+        ,[gender,pageSize,natio,restart]);
         return {data, isLoad, isError }
     }
-        
+    
     const contacts = useContacts();
     const user = contacts.data;
     console.log(user);
+
+    function restarter() {
+        setRestart(!restart);
+        console.log("RESTART");
+    }
 
     if (!contacts.isLoad && !contacts.isError){
 
@@ -81,13 +91,17 @@ function Randomuser() {
                     <div className="button" onClick={smallPage}>4  on page</div>
                 </div>
                 <div className='row gender-buttons'>
-                    <div className="button" onClick={allSex}>all sex</div>
+                    <div className="button" onClick={allSex}>
+                        <ImManWoman />
+                        all sex</div>
                     <div className="button" onClick={female}>women</div>
                     <div className="button" onClick={male}>men</div>
+                    <div className='restart-wraper'>
+                        <VscDebugRestart size='1.5rem' color='#212529' onClick={restarter}/>
+                    </div>
                 </div>
+                
                 <SortByNationality/>
-                <div className='restart-button'>
-                </div>
             </div>
             <div className='table-top-wraper'>
                 <TableTop/>
@@ -96,14 +110,14 @@ function Randomuser() {
             <ul className='col users-list'>
                 {user.map((user) => (<li className='row user' key={user.login.uuid} >
                     <img src={user.picture.medium} className='col-1 photo' alt=''/>    
-                    <div className='col-2 col fullname'>
+                    <div className='col-1 col fullname'>
                         <span>{user.name.first} {user.name.last}</span>
                         <Nationality user={user}/> 
                     </div>
                     <Birthday user={user}/>
                     <div className='col-3 col contact'>
-                        <p>Phone: {user.phone}</p>
-                        <p>{user.email}</p>
+                        <p><FaPhone />  &nbsp;&nbsp;   {user.phone}</p>
+                        <p><AiOutlineMail/> &nbsp;&nbsp; {user.email}</p>
                     </div>
                     <Location user={user}/>
                     

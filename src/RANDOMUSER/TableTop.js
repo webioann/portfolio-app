@@ -9,8 +9,7 @@ class TableTop extends Component {
                 <div className='col-2'>Full name</div>
                 <div className='col-2'>Birthday</div>
                 <div className='col-3'>Phone and email</div>
-                <div className='col-3'>Location</div>
-                <div className='col-1'>Nationality</div>
+                <div className='col-3 loc'>Location</div>
             </div>
         )
     }
